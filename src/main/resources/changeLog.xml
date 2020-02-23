@@ -1,0 +1,103 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Sanket_Desai" id="20200222">
+        <preConditions>
+            <dbms type="h2"/>
+        </preConditions>
+        <createTable tableName="CUSTOMER">
+            <column autoIncrement="true" name="CUSTOMER_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="CUSTOMER_USERNAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CUSTOMER_NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACTIVE_DAY_POINTS" type="BIGINT"/>
+        </createTable>
+
+        <createTable tableName="PRODUCT">
+            <column autoIncrement="true" name="PRODUCT_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="PRODUCT_NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRODUCT_CODE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="POINTS_COST" type="BIGINT"/>
+        </createTable>
+
+
+        <insert tableName="CUSTOMER">
+            <column name="CUSTOMER_USERNAME" value="HitMan"/>
+            <column name="CUSTOMER_NAME" value="Rohit Sharma"/>
+            <column name="ACTIVE_DAY_POINTS" value="1000"/>
+        </insert>
+
+        <insert tableName="CUSTOMER">
+            <column name="CUSTOMER_USERNAME" value="RunMachine"/>
+            <column name="CUSTOMER_NAME" value="Virat Kohli"/>
+            <column name="ACTIVE_DAY_POINTS" value="1600"/>
+        </insert>
+
+        <insert tableName="CUSTOMER">
+            <column name="CUSTOMER_USERNAME" value="YorkerWala"/>
+            <column name="CUSTOMER_NAME" value="Jasprit Bumrah"/>
+            <column name="ACTIVE_DAY_POINTS" value="700"/>
+        </insert>
+
+        <insert tableName="CUSTOMER">
+            <column name="CUSTOMER_USERNAME" value="SabKarega"/>
+            <column name="CUSTOMER_NAME" value="K L Rahul"/>
+            <column name="ACTIVE_DAY_POINTS" value="400"/>
+        </insert>
+
+        <insert tableName="PRODUCT">
+            <column name="PRODUCT_NAME" value="Adidas Batting Gloves"/>
+            <column name="PRODUCT_CODE" value="gloves"/>
+            <column name="POINTS_COST" value="300"/>
+        </insert>
+
+        <insert tableName="PRODUCT">
+            <column name="PRODUCT_NAME" value="S G Bat"/>
+            <column name="PRODUCT_CODE" value="sgbat"/>
+            <column name="POINTS_COST" value="500"/>
+        </insert>
+
+        <insert tableName="PRODUCT">
+            <column name="PRODUCT_NAME" value="SS Cricket Helmet"/>
+            <column name="PRODUCT_CODE" value="sshelmet"/>
+            <column name="POINTS_COST" value="50"/>
+        </insert>
+
+        <insert tableName="PRODUCT">
+            <column name="PRODUCT_NAME" value="Spartan Kit Bag"/>
+            <column name="PRODUCT_CODE" value="kitbag"/>
+            <column name="POINTS_COST" value="100"/>
+        </insert>
+
+        <insert tableName="PRODUCT">
+            <column name="PRODUCT_NAME" value="Wasan Batting Pads"/>
+            <column name="PRODUCT_CODE" value="pads"/>
+            <column name="POINTS_COST" value="200"/>
+        </insert>
+
+        <insert tableName="PRODUCT">
+            <column name="PRODUCT_NAME" value="SG Seamer Cricket Ball"/>
+            <column name="PRODUCT_CODE" value="sgball"/>
+            <column name="POINTS_COST" value="200"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
